@@ -1,20 +1,54 @@
 $(document).ready(function(){
 
+
+  var booleanFlagCSS = false;
+  var booleanFlagC = false;
+  var booleanFlagJAVA = false;
+  var booleanFlagPHP = false;
+  var booleanFlagRUBY = false;
+
   $("#form").submit(function(event) {
     var ansWhy = $("input:radio[name=why]:checked").val();
     var ansBF = $("input:radio[name=bf]:checked").val();
     var ansCom = $("input:radio[name=company]:checked").val();
-    var ansClr = $("input:radio[name=color]:checked").val();
     var ansPlat = $("input:radio[name=platform]:checked").val();
     var ansLike = $("input:radio[name=micro]:checked").val();
 
-    var classResult = "." + ansWhy + "." + ansBF + "." + ansCom + "." + ansClr + "." + ansPlat + "." +  ansLike;
+    var classResult = [ansWhy, ansBF, ansCom, ansPlat, ansLike];
 
-    if (div.classList.contains(classResult)){
-        $(classResult).show();
+    // var checkAnswer = function(){
+      for (i=0; i < classResult.length; i ++){
+        if($("#resultCSS").hasClass(classResult[i])){
+          booleanFlagCSS = true;
+        } else if ($("#resultC").hasClass(classResult[i])){
+          booleanFlagC = true;
+        } else if($("#resultJava").hasClass(classResult[i])){
+          booleanFlagJAVA = true;
+        } else if($("#resultPHP").hasClass(classResult[i])){
+          booleanFlagPHP = true;
+        } else if($("#resultRuby").hasClass(classResult[i])){
+          booleanFlagRUBY = true;
+        }
+      }
+    // }
+
+    // checkAnswer();
+    if (booleanFlagCSS) {
+      $("#resultCSS").show();
+
+    } else if (booleanFlagC){
+      $("#resultC").show();
+
+    } else if (booleanFlagJAVA){
+      $("#resultJava").show();
+
+    } else if (booleanFlagPHP) {
+      $("#resultPHP").show();
+
+    } else if (booleanFlagRUBY){
+      $("#resultRuby").show();
     }
 
     event.preventDefault();
   });
-
 });

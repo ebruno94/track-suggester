@@ -1,3 +1,26 @@
-#result{
+#resBanner{
   display: none;
+}
+
+#resultCSS {
+  display: none;
+}
+
+#resultC{
+  display: none;
+}
+
+#resultJava{
+  display: none;
+}
+#resultPHP{
+  display: none;
+}
+
+#resultRuby{
+  display: none;
+}
+
+#copyright{
+  text-align: center;
 }
