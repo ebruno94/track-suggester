@@ -16,23 +16,21 @@ $(document).ready(function(){
 
     var classResult = [ansWhy, ansBF, ansCom, ansPlat, ansLike];
 
-    // var checkAnswer = function(){
-      for (i=0; i < classResult.length; i ++){
-        if($("#resultCSS").hasClass(classResult[i])){
-          booleanFlagCSS = true;
-        } else if ($("#resultC").hasClass(classResult[i])){
-          booleanFlagC = true;
-        } else if($("#resultJava").hasClass(classResult[i])){
-          booleanFlagJAVA = true;
-        } else if($("#resultPHP").hasClass(classResult[i])){
-          booleanFlagPHP = true;
-        } else if($("#resultRuby").hasClass(classResult[i])){
-          booleanFlagRUBY = true;
-        }
+    for (i=0; i < classResult.length; i ++){
+      if($("#resultCSS").hasClass(classResult[i])){
+        booleanFlagCSS = true;
+      } else if ($("#resultC").hasClass(classResult[i])){
+        booleanFlagC = true;
+      } else if($("#resultJava").hasClass(classResult[i])){
+        booleanFlagJAVA = true;
+      } else if($("#resultPHP").hasClass(classResult[i])){
+        booleanFlagPHP = true;
+      } else if($("#resultRuby").hasClass(classResult[i])){
+        booleanFlagRUBY = true;
       }
-    // }
+    }
 
-    // checkAnswer();
+    $("#resBanner").show();
     if (booleanFlagCSS) {
       $("#resultCSS").show();
 
@@ -51,4 +49,5 @@ $(document).ready(function(){
 
     event.preventDefault();
   });
+
 });
