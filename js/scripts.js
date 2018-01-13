@@ -19,33 +19,41 @@ $(document).ready(function(){
     for (i=0; i < classResult.length; i ++){
       if($("#resultCSS").hasClass(classResult[i])){
         booleanFlagCSS = true;
-      } else if ($("#resultC").hasClass(classResult[i])){
+      };
+      if ($("#resultC").hasClass(classResult[i])){
         booleanFlagC = true;
-      } else if($("#resultJava").hasClass(classResult[i])){
+      };
+      if($("#resultJava").hasClass(classResult[i])){
         booleanFlagJAVA = true;
-      } else if($("#resultPHP").hasClass(classResult[i])){
+      };
+      if($("#resultPHP").hasClass(classResult[i])){
         booleanFlagPHP = true;
-      } else if($("#resultRuby").hasClass(classResult[i])){
+      };
+      if($("#resultRuby").hasClass(classResult[i])){
         booleanFlagRUBY = true;
-      }
-    }
+      };
+    };
 
     $("#resBanner").show();
     if (booleanFlagCSS) {
       $("#resultCSS").show();
 
-    } else if (booleanFlagC){
+    };
+    if (booleanFlagC){
       $("#resultC").show();
 
-    } else if (booleanFlagJAVA){
+    };
+    if (booleanFlagJAVA){
       $("#resultJAVA").show();
 
-    } else if (booleanFlagPHP) {
+    };
+    if (booleanFlagPHP) {
       $("#resultPHP").show();
 
-    } else if (booleanFlagRUBY){
+    };
+    if (booleanFlagRUBY){
       $("#resultRUBY").show();
-    }
+    };
 
     event.preventDefault();
   });
