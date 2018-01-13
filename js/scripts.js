@@ -38,16 +38,17 @@ $(document).ready(function(){
       $("#resultC").show();
 
     } else if (booleanFlagJAVA){
-      $("#resultJava").show();
+      $("#resultJAVA").show();
 
     } else if (booleanFlagPHP) {
       $("#resultPHP").show();
 
     } else if (booleanFlagRUBY){
-      $("#resultRuby").show();
+      $("#resultRUBY").show();
     }
 
     event.preventDefault();
   });
+
 
 });

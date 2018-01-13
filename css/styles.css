@@ -50,9 +50,9 @@ h6{
 
 img{
   float: left;
-  height: 150px;
-  width: 150px;
-  margin-right: 30px;
+  height: 160px;
+  width: 160px;
+  margin: 30px;
 }
 
 #resbar{
@@ -83,14 +83,14 @@ h1{
   display: none;
 }
 
-#resultJava{
+#resultJAVA{
   display: none;
 }
 #resultPHP{
   display: none;
 }
 
-#resultRuby{
+#resultRUBY{
   display: none;
 }
 
