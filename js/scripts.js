@@ -1,62 +1,42 @@
+function calculate(points){
+  var result = 0;
+  points.forEach(function(point){
+    result += point;
+  });
+  return result;
+};
+
+
 $(document).ready(function(){
 
-
-  var booleanFlagCSS = false;
-  var booleanFlagC = false;
-  var booleanFlagJAVA = false;
-  var booleanFlagPHP = false;
-  var booleanFlagRUBY = false;
-
   $("#form").submit(function(event) {
-    var ansWhy = $("input:radio[name=why]:checked").val();
-    var ansBF = $("input:radio[name=bf]:checked").val();
-    var ansCom = $("input:radio[name=company]:checked").val();
-    var ansPlat = $("input:radio[name=platform]:checked").val();
-    var ansLike = $("input:radio[name=micro]:checked").val();
-
-    var classResult = [ansWhy, ansBF, ansCom, ansPlat, ansLike];
-
-    for (i=0; i < classResult.length; i ++){
-      if($("#resultCSS").hasClass(classResult[i])){
-        booleanFlagCSS = true;
-      };
-      if ($("#resultC").hasClass(classResult[i])){
-        booleanFlagC = true;
-      };
-      if($("#resultJava").hasClass(classResult[i])){
-        booleanFlagJAVA = true;
-      };
-      if($("#resultPHP").hasClass(classResult[i])){
-        booleanFlagPHP = true;
-      };
-      if($("#resultRuby").hasClass(classResult[i])){
-        booleanFlagRUBY = true;
-      };
-    };
-
-    $("#resBanner").show();
-    if (booleanFlagCSS) {
-      $("#resultCSS").show();
-
-    };
-    if (booleanFlagC){
-      $("#resultC").show();
-
-    };
-    if (booleanFlagJAVA){
-      $("#resultJAVA").show();
-
-    };
-    if (booleanFlagPHP) {
-      $("#resultPHP").show();
-
-    };
-    if (booleanFlagRUBY){
-      $("#resultRUBY").show();
-    };
-
     event.preventDefault();
+    var ansWhy = parseInt($("input:radio[name=why]:checked").val());
+    var ansBF = parseInt($("input:radio[name=bf]:checked").val());
+    var ansCom = parseInt($("input:radio[name=company]:checked").val());
+    var ansPlat = parseInt($("input:radio[name=platform]:checked").val());
+    var ansLike = parseInt($("input:radio[name=micro]:checked").val());
+
+    var scores = [ansWhy, ansBF, ansCom, ansPlat, ansLike];
+    var totalScore = calculate(scores);
+    console.log(totalScore);
+    $("resBanner").show();
+    if (totalScore > 10){
+      $("#resultC").show("ease");
+    } else {
+      if (totalScore <= 5){
+        $("#resultPHP").show("ease");
+      } else if (totalScore > 5 && totalScore <= 6){
+        $("#resultCSS").show("ease");
+      } else if (totalScore > 6 && totalScore <= 8){
+        $("#resultJAVA").show("ease");
+        if (totalScore > 7){
+          $("#resultRUBY").show("ease");
+        }
+      }
+    }
   });
-
-
+  $("button#reset").click(function(){
+    location.reload();
+  });
 });
