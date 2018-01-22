@@ -15,10 +15,10 @@ Each choice is assigned a point:
 ** Choice 3 = 3 points
 ** Some points have 0, or 10.
 
-| Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
+| Spec | Output |
+| :-------------    | :------------- |
 | **Program returns PHP if score is less than 5**| Output: PHP description |
-| **Program returns CSS if score is 5 or 6 **| Output: CSS description |
+| **Program returns CSS if score is 5 or 6**| Output: CSS description |
 | **Program returns JAVA if score is 7 or 8**| Output: JAVA description |
 | **Program returns RUBY if score is greater than 7**| Output: RUBY description |
 | **Program returns C# if score is greater than 10**| Output: C# description|
